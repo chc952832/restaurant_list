@@ -2,10 +2,18 @@
 const express = require('express')
 const app = express()
 const port = 3000
+const exphbs = require('express-handlebars')  // require express-handlebars
+
+// setting template engine
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
+app.set('view engine', 'handlebars')
+
+// 載入靜態資料
+app.use(express.static('public'))
 
 // 設定路由
 app.get('/', (req, res) => {
-  res.send('This is restaurant list built with Express.')
+  res.render('index')
 })
 
 // 啟動並監聽伺服器
