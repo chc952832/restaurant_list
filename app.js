@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 
 // 設定show頁面路由
 app.get('/restaurants/:restaurant_id', (req, res) => {
-  // 用params和find方, 比對餐廳清單找到使用者點選的餐廳
+  // 用params和find方法, 比對餐廳清單找到使用者點選的餐廳
   const restaurant = restaurantList.results.find(restaurant => restaurant.id.toString() === req.params.restaurant_id)
   res.render('show', { restaurant: restaurant })
 })
@@ -27,9 +27,9 @@ app.get('/restaurants/:restaurant_id', (req, res) => {
 // 設定搜尋頁面路由
 app.get('/search', (req, res) => {
   const keyword = req.query.keyword.toLowerCase().trim()
-  const restaurants = restaurantList.results.filter(restaurant => 
-    (restaurant.name.trim().includes(keyword)) || 
-    (restaurant.category.trim().includes(keyword)))
+  const restaurants = restaurantList.results.filter(restaurant =>
+    (restaurant.name.toLowerCase().trim().includes(keyword)) ||
+    (restaurant.category.toLowerCase().trim().includes(keyword)))
   res.render('index', { restaurants: restaurants, keyword: keyword })
 })
 
