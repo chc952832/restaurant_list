@@ -59,12 +59,6 @@ header {
   height: 180px;
 }
 
-.card-columns {
-  display:flex;
-  flex-wrap:wrap;
-  justify-content: space-around;
-}
-
 .card-title {
   overflow: hidden;
   text-overflow: ellipsis;
