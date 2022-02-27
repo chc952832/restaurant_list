@@ -94,3 +94,9 @@ header {
     height: auto;
   }
 }
+
+.alert-msg {
+  text-align: center;
+  color:#9b4b4b;
+  margin-top: 20px;
+}
